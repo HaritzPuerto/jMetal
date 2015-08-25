@@ -59,12 +59,13 @@ public class NSGAIII extends AbstractGeneticAlgorithm<Solution, List<Solution>> 
 
     /// NSGAIII
     numberOfDivisions = new Vector<>(1) ;
-    numberOfDivisions.add(91) ; // Default value for 3D problems
+    numberOfDivisions.add(12) ; // Default value for 3D problems
 
 
     ReferencePoint.generateReferencePoints(referencePoints, problem.getNumberOfObjectives() , numberOfDivisions);
     
     populationSize = referencePoints.size();
+    System.out.println(referencePoints.size());
     while (populationSize%4>0) populationSize++;
 
     
