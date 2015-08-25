@@ -32,6 +32,7 @@ import org.uma.jmetal.util.evaluator.SolutionListEvaluator;
 import org.uma.jmetal.util.evaluator.impl.SequentialSolutionListEvaluator;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
@@ -178,14 +179,15 @@ public class DifferentialEvolution extends AbstractDifferentialEvolution<Solutio
       }
     }
 
-    pop.sort(comparator);
+    
+    Collections.sort(pop, comparator);
     return pop;
   }
 
   @Override
   public DoubleSolution getResult() {
-    // Return a population with the best individual
-    getPopulation().sort(comparator);
+    // Return a population with the best individual    
+    Collections.sort(getPopulation(),comparator);
 
     return getPopulation().get(0) ;
   }
